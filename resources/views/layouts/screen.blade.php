@@ -133,7 +133,8 @@
         <div id="app-container">
                     <div id="app-header">
                     <!-- left-aligned header icon -->
-                    <h2 class="margin-0 container-xl"><a href="{{ route('frontpage') }}"><i class="fas fa-arrow-left"></i></a>
+                    <h2 class="margin-0 container-xl">
+                        @yield('link')
 						@yield('title')
 					</h2>
                     <!-- right-aligned header icon -->

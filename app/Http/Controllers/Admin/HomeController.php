@@ -46,7 +46,7 @@ class HomeController extends Controller
         }
 
 
-        $orders = Order::with(['customer.district'])->whereBetween('created_at', [$start, $end])->get();
+        $orders = Order::with(['ordertrack'])->whereBetween('created_at', [$start, $end])->get();
         return view('admin.report.order', compact('orders'));
     }
 

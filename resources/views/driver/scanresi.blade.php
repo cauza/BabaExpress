@@ -33,7 +33,7 @@
         var resultContainer = document.getElementById('qr-reader-results');
         var lastResult, countResults = 0;
         function onScanSuccess(decodedText, decodedResult) {
-            window.location.href = '/driver/pickupmitra/'+decodedText;
+            window.location.href = '/driver/detailresi/'+decodedText;
         }
 
         var html5QrcodeScanner = new Html5QrcodeScanner(

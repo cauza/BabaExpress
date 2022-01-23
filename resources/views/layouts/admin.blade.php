@@ -30,12 +30,12 @@
 
     <footer class="app-footer">
         <div>
-            <a href="https://cauza.web.id">Willy Cauza</a>
-            <span>&copy; 2020 PT. Zafa Mulia Mandiri</span>
+            <a href="#">BabaXpress</a>
+            <span>&copy; 2022</span>
         </div>
         <div class="ml-auto">
             <span>Powered by</span>
-            <a href="https://zafatour.com">ZafaCorp.</a>
+            <a href="#">Baba</a>
         </div>
     </footer>
     

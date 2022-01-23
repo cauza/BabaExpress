@@ -15,4 +15,9 @@ class Driver extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($value);
     }
+
+    public function ordertrack()
+    {
+        return $this->hasMany(OrderTrack::class, 'driver_id');
+    }
 }

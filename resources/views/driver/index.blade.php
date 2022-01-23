@@ -103,10 +103,10 @@
                 </div>
 
                 <div class="links-button">
-                    <a href=" {{ route('driver.order') }}">Daftar Order</a> <br>
+                    {{-- <a href=" {{ route('driver.order') }}">Daftar Order</a> <br> --}}
                     <a href="{{ route('driver.pickup') }}">Jemput Barang</a> <br>
                     <a href="{{ route('driver.send') }}">Antar Barang</a> <br>
-                    <a href="#">History</a>
+                    <a href="{{ route('driver.history') }}">History</a>
                 </div>
             </div>
         </div>

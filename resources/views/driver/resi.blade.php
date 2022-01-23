@@ -4,10 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>BabaXpress</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -45,7 +47,12 @@
             }
 
             .title {
-                font-size: 36px;
+                margin: 35px;
+                font-size: 80px;
+                font-family: 'Shadows Into Light', cursive;
+                font-weight: 400;
+                line-height: 0.9;
+                text-shadow: 2px 2px #363636;
             }
 
             .links > a {
@@ -76,37 +83,34 @@
                 margin-bottom: 30px;
             }
 
-            .avatar img{
-                border-radius: 50%; 
-                width: 150px;        
+            .header-logo {
+                background-color: #ffffff;
+                border-radius: 0 0 900px 900px;
+                min-height: 30%;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                box-shadow: 5px 10px #888888;
             }
+
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            <div class="top-right links">
-            @if (auth()->guard('customer')->check())
-				<a href="{{ route('customer.logout') }}">Logout</a>
-			@else
-				<a href="{{ route('customer.login') }}">Login</a>
-			@endif
-				<a href="{{ route('customer.dashboard') }}">My Account</a>
-            </div>
-
-            <div class="content">
-                <div class="avatar">
-                    <img src="{{ asset('images/'.$data->foto.'') }}" alt="">
-                </div>
-                <div class="title m-b-md">
-                    Hi, {{ $data->name }}
+            <div class="content">   
+                <div><h3>Terima Kasih</h3></div>
+                <div class="tengah">Kode transaksi anda adalah : <br>{{ $resi }}</div> <br>
+                <div>
+                    <img src="https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl={{ $resi }}&choe=UTF-8">
                 </div>
 
                 <div class="links-button">
-                    <a href="#">Cek Pengiriman</a><br>
-                    <a href="#">Cek Bonus</a><br>
-                    <a href="{{ route('qrcode') }}">QR Code</a>
+                    <a href="{{ route('driver.dashboard') }}">Kembali</a>
                 </div>
             </div>
         </div>
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
 </html>
+
+

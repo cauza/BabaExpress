@@ -16,8 +16,8 @@ class CreateOrderTracksTable extends Migration
         Schema::create('order_tracks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('order_id');
-            $table->integer('diver_id');
-            $table->char('status', 1)->default(0)->comment('0: new, 1: confirm, 2: pickup, 3: shipping, 4: done');
+            $table->integer('driver_id');
+            $table->char('status', 1)->default(0)->comment('0: pesanan baru, 1: sudah dijemput, 2: sudah sampai, ');
             $table->timestamps();
         });
     }

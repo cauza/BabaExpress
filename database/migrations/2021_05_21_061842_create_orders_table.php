@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('mitra_id');
+            $table->string('mitra_id');
             $table->string('resi');
             $table->string('nama_pengirim');
             $table->string('alamat_pengirim');
@@ -27,8 +27,9 @@ class CreateOrdersTable extends Migration
             $table->string('berat');
             $table->string('harga');
             $table->string('volume');
+            $table->integer('kecamatan_id');
             $table->integer('ongkir');
-            $table->char('status', 1)->default(0)->comment('0: new, 1: confirm, 2: pickup, 3: shipping, 4: done');
+            $table->char('status', 1)->default(0)->comment('0: pesanan baru, 1: sudah dijemput, 2: sudah sampai, ');
             $table->timestamps();
         });
     }

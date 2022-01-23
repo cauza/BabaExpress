@@ -4,6 +4,10 @@
     Driver Regitration
 @endsection
 
+@section('link')
+    <a href="{{ route('driver.dashboard') }}"><i class="fas fa-arrow-left"></i></a> 
+@endsection
+
 @section('content')
         <div class="form-order position-ref">
             <div class="content container-xl">

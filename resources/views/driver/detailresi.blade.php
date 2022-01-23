@@ -21,6 +21,7 @@
 
 					<div class="login_form_inner">
 						<h3>No. Resi : {{ $orders->resi }}</h3>
+                        
                         <h4>Pengirim :</h4>
                         <table class="table table-striped text-grey">
                             <tr><td>Nama</td><td>:</td><td>{{ $orders->nama_pengirim }}</td></tr>
@@ -41,7 +42,31 @@
                             <tr><td>Harga</td><td>:</td><td>Rp. {{ number_format($orders->harga) }}</td></tr>
                             <tr><td>Ongkir</td><td>:</td><td>Rp. {{  number_format($orders->ongkir) }}</td></tr>
                         </table>
+                        <h4>Status Pengiriman : {{ $orders->status_label }}</h4>
+                        <table class="table table-striped text-grey">
+                            @foreach ($tracks as $item)
+                                <tr><td>{{ $item->created_at }} - {{ $item->status_label }}</td><td>oleh : {{ $item->driver->name }}</td></tr>
+                            @endforeach
+                        </table><br>
+
+                        @if($orders->status!=2)
+                        <div class="form-group">
+                            <form action="{{ route('driver.sendstatus', $orders->id) }}" method="post">
+                                @csrf
+                                @method('patch')
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                    <button class="btn btn-outline-light br-25 pdh-30"><i class="fa fa-paper-plane" ></i> Terkirim</button>
+                                </div>
+                            </form>
+                        </div>
+                        @endif
+
+                    
+
+                        
 					</div>
+
+
     </div>
 </div>
 @endsection

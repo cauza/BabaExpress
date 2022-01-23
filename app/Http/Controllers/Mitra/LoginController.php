@@ -64,6 +64,7 @@ class LoginController extends Controller
 
             if (!auth()->guard('customer')->check()) {
                 $customer = Customer::create([
+                    'id' => Str::random(36),
                     'name' => $request->customer_name,
                     'email' => $request->email,
                     'password' => $request->password,

@@ -4,6 +4,10 @@
     Login Mitra
 @endsection
 
+@section('link')
+    <a href="{{ route('frontpage') }}"><i class="fas fa-arrow-left"></i></a> 
+@endsection
+
 @section('content')
 <div class="flex-center position-ref full-height">
     <div class="content container-xl">
@@ -34,7 +38,7 @@
 							<div class="col-md-12 form-group mb-25">
                                 <button  type="submit" value="submit"  class="btn btn-outline-light br-25 pdh-30"><i class="fa fa-key" ></i> Login</button>
 							</div>
-                            <div class="col-md-12 form-group links"><a href="#">Lupa Password?</a> <hr> <a href="{{ route('customer.register') }}">Buat Akun Baru</a></div>
+                            {{-- <div class="col-md-12 form-group links"><a href="#">Lupa Password?</a> <hr> <a href="{{ route('customer.register') }}">Buat Akun Baru</a></div> --}}
 						</form>
 					</div>
     </div>

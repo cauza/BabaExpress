@@ -70,4 +70,10 @@ class OrderController extends Controller
         $resi = $resi;
         return view('mitra.resi', compact('resi'));
     }
+
+    public function qrcode()
+    {
+        $id = auth()->guard('customer')->id();
+        return view('mitra.qrcode', compact('id'));
+    }
 }
